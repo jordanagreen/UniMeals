@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -18,21 +19,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private int mRemainingMeals;
     private float mRemainingMoney;
-    private int mRemainingDays;
     private int mEndMonth;
     private int mEndDay;
 
     private Spinner mMonthSpinner;
     private Spinner mDaySpinner;
+    private EditText mMealEditText;
+    private EditText mMoneyEditText;
 
     private static final Integer[] MONTHS = makeIntRange(12);
     private static final Integer[] DAYS = makeIntRange(31);
+
+    public static final String EXTRA_MONTH = "EXTRA_MONTH";
+    public static final String EXTRA_DAY = "EXTRA_DAY";
+    public static final String EXTRA_MONEY = "EXTRA_MONEY";
+    public static final String EXTRA_MEALS = "EXTRA_MEALS";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mMealEditText = (EditText) findViewById(R.id.editMeals);
+        mMoneyEditText = (EditText) findViewById(R.id.editMoney);
         mMonthSpinner = (Spinner) findViewById(R.id.spinnerMonth);
         mDaySpinner = (Spinner) findViewById(R.id.spinnerDay);
         ArrayAdapter<Integer> months = new ArrayAdapter<Integer>(this,
@@ -49,7 +58,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void viewWeek(View v){
+        int meals = Integer.parseInt(mMealEditText.toString());
+        float money = Float.parseFloat(mMoneyEditText.toString());
         Intent intent = new Intent(this, WeekActivity.class);
+        intent.putExtra(EXTRA_DAY, mEndDay);
+        intent.putExtra(EXTRA_MONEY, mEndMonth);
+        intent.putExtra(EXTRA_MONEY, money);
+        intent.putExtra(EXTRA_MEALS, meals);
         startActivity(intent);
     }
 

@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="Meals:"/>
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/editMeals" />
         </LinearLayout>
@@ -39,7 +39,7 @@
                 android:text="Money:"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/editMoney" />
         </LinearLayout>
@@ -52,18 +52,27 @@
                 android:layout_height="wrap_content"
                 android:text="Semester ends:"
                 android:id="@+id/textSemesterEnds"/>
-            <Spinner
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/spinnerMonth"
-                android:layout_below="@+id/textSemesterEnds">
-            </Spinner>
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/spinnerDay"
-                android:layout_toRightOf="@+id/spinnerMonth"
-                android:layout_below="@+id/textSemesterEnds">></Spinner>
+                android:layout_below="@id/textSemesterEnds">
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinnerMonth"
+                    android:layout_below="@+id/textSemesterEnds">
+                </Spinner>
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinnerDay"
+                    android:layout_toRightOf="@+id/spinnerMonth"
+                    android:layout_below="@+id/textSemesterEnds">
+                </Spinner>
+            </LinearLayout>
+
         </RelativeLayout>
 
 
