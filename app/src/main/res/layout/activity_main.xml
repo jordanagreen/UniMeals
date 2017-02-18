@@ -27,7 +27,9 @@
             <EditText
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editMeals" />
+                android:id="@+id/editMeals"
+                android:inputType="number"
+                android:text="100"/>
         </LinearLayout>
 
         <LinearLayout
@@ -41,7 +43,9 @@
             <EditText
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editMoney" />
+                android:id="@+id/editMoney"
+                android:inputType="numberDecimal"
+                android:text="50.00"/>
         </LinearLayout>
 
         <RelativeLayout

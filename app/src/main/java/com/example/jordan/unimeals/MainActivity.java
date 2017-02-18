@@ -58,11 +58,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void viewWeek(View v){
-        int meals = Integer.parseInt(mMealEditText.toString());
-        float money = Float.parseFloat(mMoneyEditText.toString());
+        int meals = Integer.parseInt(mMealEditText.getText().toString());
+        float money = Float.parseFloat(mMoneyEditText.getText().toString());
         Intent intent = new Intent(this, WeekActivity.class);
         intent.putExtra(EXTRA_DAY, mEndDay);
-        intent.putExtra(EXTRA_MONEY, mEndMonth);
+        intent.putExtra(EXTRA_MONTH, mEndMonth);
         intent.putExtra(EXTRA_MONEY, money);
         intent.putExtra(EXTRA_MEALS, meals);
         startActivity(intent);
