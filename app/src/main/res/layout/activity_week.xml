@@ -283,16 +283,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/calendarList">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Search"
-                android:onClick="searchYelp"
-                android:id="@+id/searchButton"/>
+            <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Search"-->
+                <!--android:onClick="searchYelp"-->
+                <!--android:id="@+id/searchButton"/>-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/searchButton"
                 android:text="You should use:"
                 android:id="@+id/textShouldUse"/>
         </RelativeLayout>
